@@ -4,7 +4,7 @@
 
 <br/>
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=22&pause=800&color=FF6B00&center=true&vCenter=true&multiline=true&width=820&height=80&lines=Free+Fire+Centralized+API+System+v6.0;19+Groups+%E2%80%A2+34+Endpoints+%E2%80%A2+Player+Info+is+FREE+%F0%9F%92%8E)](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=22&pause=800&color=FF6B00&center=true&vCenter=true&multiline=true&width=820&height=80&lines=Free+Fire+Centralized+API+System+v5.0;14+Groups+%E2%80%A2+29+Endpoints+%E2%80%A2+Player+Info+is+FREE+%F0%9F%92%8E)](https://git.io/typing-svg)
 
 <br/>
 
@@ -21,11 +21,11 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Version-6.0-FF6B00?style=for-the-badge&labelColor=0d1117" />
+  <img src="https://img.shields.io/badge/Version-5.0-FF6B00?style=for-the-badge&labelColor=0d1117" />
   <img src="https://img.shields.io/badge/Game-Free%20Fire-FF0000?style=for-the-badge&logo=firefoxbrowser&logoColor=white&labelColor=0d1117" />
   <img src="https://img.shields.io/badge/Built%20With-Python%20Flask-3776AB?style=for-the-badge&logo=python&logoColor=white&labelColor=0d1117" />
-  <img src="https://img.shields.io/badge/Endpoint%20Groups-19-8B5CF6?style=for-the-badge&logo=apachespark&logoColor=white&labelColor=0d1117" />
-  <img src="https://img.shields.io/badge/Total%20Endpoints-34-00C851?style=for-the-badge&labelColor=0d1117" />
+  <img src="https://img.shields.io/badge/Endpoint%20Groups-14-8B5CF6?style=for-the-badge&logo=apachespark&logoColor=white&labelColor=0d1117" />
+  <img src="https://img.shields.io/badge/Total%20Endpoints-29-00C851?style=for-the-badge&labelColor=0d1117" />
 </p>
 
 <br/>
@@ -40,7 +40,7 @@
 
 <blockquote>
 <img src="https://img.shields.io/badge/⚡-PREMIUM-FF6B00?style=flat-square&labelColor=0d1117" /> &nbsp;
-The most complete <b>Centralized REST API for Free Fire</b> — Player Info, JWT Generator, Ban Check, Guild Tools, Friend Actions, Bind/Unbind, Wallet Info, Login History, Wish List, Outfit Renderer and more. <b>34 endpoints across 19 groups</b>, all in one place.
+The most complete <b>Centralized REST API for Free Fire</b> — Player Info, JWT Generator, Ban Check, Guild Tools, Friend Actions, Bind/Unbind, Outfit Renderer, Craftlands and more. <b>29 endpoints across 14 groups</b>, all in one place.
 </blockquote>
 
 </div>
@@ -179,57 +179,18 @@ The most complete <b>Centralized REST API for Free Fire</b> — Player Info, JWT
       </a>
     </td>
   </tr>
-  <tr>
-    <td align="center">
-      <a href="#15--dynamic-duo">
-        <img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1fac2/512.gif" width="28" /><br/>
-        <b>Dynamic Duo</b><br/>
-        <sub><code>/dynamicduo</code></sub><br/>
-        <sub><img src="https://img.shields.io/badge/1-endpoint-2CA5E0?style=flat-square&labelColor=0d1117"/></sub>
-      </a>
-    </td>
-    <td align="center">
-      <a href="#16--login-history">
-        <img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f4dc/512.gif" width="28" /><br/>
-        <b>Login History</b><br/>
-        <sub><code>/loginhistory</code></sub><br/>
-        <sub><img src="https://img.shields.io/badge/1-endpoint-FF0000?style=flat-square&labelColor=0d1117"/></sub>
-      </a>
-    </td>
-    <td align="center">
-      <a href="#17--wish-list">
-        <img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f381/512.gif" width="28" /><br/>
-        <b>Wish List</b><br/>
-        <sub><code>/wish</code></sub><br/>
-        <sub><img src="https://img.shields.io/badge/1-endpoint-FF6B00?style=flat-square&labelColor=0d1117"/></sub>
-      </a>
-    </td>
-  </tr>
-  <tr>
-    <td align="center">
-      <a href="#18--wallet-info">
-        <img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f4b0/512.gif" width="28" /><br/>
-        <b>Wallet Info</b><br/>
-        <sub><code>/walletinfo</code></sub><br/>
-        <sub><img src="https://img.shields.io/badge/1-endpoint-00C851?style=flat-square&labelColor=0d1117"/></sub>
-      </a>
-    </td>
-    <td align="center">
-      <a href="#19--jwt-generate">
-        <img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f510/512.gif" width="28" /><br/>
-        <b>JWT Generate</b><br/>
-        <sub><code>/jwtgenerate</code></sub><br/>
-        <sub><img src="https://img.shields.io/badge/1-endpoint-8B5CF6?style=flat-square&labelColor=0d1117"/></sub>
-      </a>
-    </td>
-    <td></td>
-  </tr>
 </table>
 
 <br/>
 
 <table>
   <tr>
+    <td align="center" width="160">
+      <a href="#-access-tiers--free-vs-premium">
+        <img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f510/512.gif" width="22" /><br/>
+        <sub><b>Access Tiers</b></sub>
+      </a>
+    </td>
     <td align="center" width="160">
       <a href="#-base-url--authentication">
         <img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f310/512.gif" width="22" /><br/>
@@ -244,7 +205,7 @@ The most complete <b>Centralized REST API for Free Fire</b> — Player Info, JWT
     </td>
     <td align="center" width="160">
       <a href="#-supported-regions">
-        <img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f30d/512.gif" width="22" /><br/>
+        <img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f30f/512.gif" width="22" /><br/>
         <sub><b>Regions</b></sub>
       </a>
     </td>
@@ -327,15 +288,13 @@ GET http://siambhau69.eu.cc/
 ```
 
 <details>
-<summary><b>📄 View Full Response (19 Groups)</b></summary>
+<summary><b>📄 View Full Response (14 Groups)</b></summary>
 <br/>
 
 ```json
 {
   "API": "Free Fire Centralized API System",
-  "Version": "6.0",
-  "Total API": 19,
-  "Total Endpoints": 34,
+  "Version": "5.0",
   "Owner": "SiamBhau",
   "Telegram": "t.me/SiamBhau",
   "Groups": {
@@ -344,19 +303,14 @@ GET http://siambhau69.eu.cc/
     "Ban Check"      : "/bancheck",
     "Bind Tools"     : "/bind",
     "Banner"         : "/banner",
-    "Dynamic Duo"    : "/dynamicduo",
     "EAT To JWT"     : "/eattojwt",
     "Free Fire Info" : "/freefireinfo",       // ← FREE TIER ✨
-    "Friends Tools"  : "/friends",
-    "Guild Tools"    : "/guild",
+    "Friends"        : "/friends",
+    "Guild"          : "/guild",
     "JWT Decode"     : "/jwttokendecode",
-    "JWT Generate"   : "/jwtgenerate",
-    "Login History"  : "/loginhistory",
     "Long Bio"       : "/longbio",
     "Name Changer"   : "/namechanger",
     "Outfits"        : "/outfits",
-    "Wallet Info"    : "/walletinfo",
-    "Wish List"      : "/wish",
     "Craftlands"     : "/craftlands"
   }
 }
@@ -2232,281 +2186,6 @@ GET /craftlands/map_details?map_code=ABC123&region=BD&lang=en&key=YOUR_KEY
 
 ---
 
-## 15. 👫 Dynamic Duo
-
-<img src="https://img.shields.io/badge/Group-/dynamicduo-2CA5E0?style=flat-square&labelColor=0d1117" /> &nbsp; <img src="https://img.shields.io/badge/Endpoints-1-2CA5E0?style=flat-square&labelColor=0d1117" />
-
-> Fetches a player's **Dynamic Duo** (special partner) information from Free Fire.
-
-### `GET /dynamicduo/dynamicduo` — Get Dynamic Duo Info
-
-```http
-GET /dynamicduo/dynamicduo?uid=2579249340&region=BD&key=YOUR_KEY
-```
-
-| Parameter | Type | Required | Description |
-|-----------|------|:--------:|-------------|
-| `uid` | string | ✅ | Free Fire Player UID |
-| `region` | string | ✅ | Server Region Code (BD, IND, SG…) |
-| `key` | string | ✅ | Your API Key |
-
-<details>
-<summary><b>✅ Success / ❌ Error Responses</b></summary>
-<br/>
-
-```json
-// ✅ Success
-{
-  "status": "success",
-  "uid": "2579249340",
-  "region": "BD",
-  "dynamicduo": { "...": "..." },
-  "Owner": { "Owner": "SiamBhau", "Telegram": "t.me/SiamBhau" }
-}
-
-
-// ❌ Errors
-{ "error": "Please provide UID." }
-
-{ "error": "Please provide REGION." }
-
-{
-  "status": "error",
-  "message": "Failed to fetch Dynamic Duo info. Check UID/Region and try again."
-}
-```
-
-</details>
-
----
-
-## 16. 📜 Login History
-
-<img src="https://img.shields.io/badge/Group-/loginhistory-FF0000?style=flat-square&labelColor=0d1117" /> &nbsp; <img src="https://img.shields.io/badge/Endpoints-1-FF0000?style=flat-square&labelColor=0d1117" />
-
-> Returns a player's **full login history** — device model, architecture, login type, and timestamps — via JWT token.
-
-### `GET /loginhistory/history` — Get Login History
-
-```http
-GET /loginhistory/history?jwt=YOUR_JWT&key=YOUR_KEY
-```
-
-| Parameter | Type | Required | Description |
-|-----------|------|:--------:|-------------|
-| `jwt` | string | ✅ | Free Fire JWT Bearer Token |
-| `key` | string | ✅ | Your API Key |
-
-<details>
-<summary><b>✅ Success / ❌ Error Responses</b></summary>
-<br/>
-
-```json
-// ✅ Success
-{
-  "status": "success",
-  "loginhistory": {
-    "nickname": "SiamBhau",
-    "account_id": "2579249340",
-    "region": "BD",
-    "login_entries": [
-      {
-        "last_login_timestamp": 1777636197,
-        "last_login_time": "2025-04-29 08:29:57",
-        "extra": "",
-        "device_model": "SM-A305F",
-        "device_architecture": "arm64-v8a",
-        "login_type": "Usual"
-      }
-    ]
-  },
-  "Owner": { "Owner": "SiamBhau", "Telegram": "t.me/SiamBhau" }
-}
-
-
-// ❌ Errors
-{ "error": "Please provide 'jwt' parameter (your JWT token)." }
-
-{ "status": "error", "message": "Invalid JWT token" }
-
-{ "status": "error", "message": "Failed to fetch login history. Check your JWT token and try again." }
-```
-
-</details>
-
----
-
-## 17. 🎁 Wish List
-
-<img src="https://img.shields.io/badge/Group-/wish-FF6B00?style=flat-square&labelColor=0d1117" /> &nbsp; <img src="https://img.shields.io/badge/Endpoints-1-FF6B00?style=flat-square&labelColor=0d1117" />
-
-> Retrieves a player's **in-game Wish List** — item IDs and their release timestamps.
-
-### `GET /wish/wishlist` — Get Player Wish List
-
-```http
-GET /wish/wishlist?uid=2579249340&region=BD&key=YOUR_KEY
-```
-
-| Parameter | Type | Required | Description |
-|-----------|------|:--------:|-------------|
-| `uid` | string | ✅ | Free Fire Player UID |
-| `region` | string | ✅ | Server Region Code (BD, IND, SG…) |
-| `key` | string | ✅ | Your API Key |
-
-<details>
-<summary><b>✅ Success / ❌ Error Responses</b></summary>
-<br/>
-
-```json
-// ✅ Success
-{
-  "status": "success",
-  "uid": "2579249340",
-  "region": "BD",
-  "wishlist": [
-    { "item_id": 911030141, "release_time": "2024-11-01 12:00:00" },
-    { "item_id": 214050892, "release_time": "2024-09-15 08:00:00" }
-  ],
-  "Owner": { "Owner": "SiamBhau", "Telegram": "t.me/SiamBhau" }
-}
-
-
-// ❌ Errors
-{ "error": "Please provide UID." }
-
-{ "error": "Please provide REGION." }
-
-{ "status": "error", "message": "Failed to fetch wishlist. Check UID/Region and try again." }
-```
-
-</details>
-
----
-
-## 18. 💰 Wallet Info
-
-<img src="https://img.shields.io/badge/Group-/walletinfo-00C851?style=flat-square&labelColor=0d1117" /> &nbsp; <img src="https://img.shields.io/badge/Endpoints-1-00C851?style=flat-square&labelColor=0d1117" />
-
-> Returns a player's **in-game wallet** — Coins, Gems, GOP Gems, total top-up history, and paid level.
-
-### `GET /walletinfo/wallet` — Get Wallet Info
-
-```http
-GET /walletinfo/wallet?uid=2579249340&region=BD&key=YOUR_KEY
-```
-
-| Parameter | Type | Required | Description |
-|-----------|------|:--------:|-------------|
-| `uid` | string | ✅ | Free Fire Player UID |
-| `region` | string | ✅ | Server Region Code (BD, IND, SG…) |
-| `key` | string | ✅ | Your API Key |
-
-<details>
-<summary><b>✅ Success / ❌ Error Responses</b></summary>
-<br/>
-
-```json
-// ✅ Success
-{
-  "status": "success",
-  "uid": "2579249340",
-  "region": "BD",
-  "wallet": {
-    "account_id": "2579249340",
-    "paid_level": 3,
-    "coins": 15420,
-    "gems": 380,
-    "gop_gems": 0,
-    "total_topup": 3900,
-    "last_topup_time": 1777636197,
-    "last_topup_date": "2025-04-29 08:29:57"
-  },
-  "Owner": { "Owner": "SiamBhau", "Telegram": "t.me/SiamBhau" }
-}
-
-
-// ❌ Errors
-{ "error": "Please provide UID." }
-
-{ "error": "Please provide REGION." }
-
-{ "status": "error", "message": "Failed to fetch wallet info. Check UID/Region and try again." }
-```
-
-</details>
-
----
-
-## 19. 🔐 JWT Generate
-
-<img src="https://img.shields.io/badge/Group-/jwtgenerate-8B5CF6?style=flat-square&labelColor=0d1117" /> &nbsp; <img src="https://img.shields.io/badge/Endpoints-1-8B5CF6?style=flat-square&labelColor=0d1117" />
-
-> Generates a Free Fire **JWT Bearer Token** via UID + Password or Garena Access Token. Faster and lighter than `/accesstojwt`.
-
-### `GET /jwtgenerate/generate` — Generate JWT
-
-#### ▸ Method 1: Via UID + Password
-
-```http
-GET /jwtgenerate/generate?uid=4147917569&password=8415C426BBE3371DADD82F5B&key=YOUR_KEY
-```
-
-#### ▸ Method 2: Via Access Token
-
-```http
-GET /jwtgenerate/generate?access_token=YOUR_ACCESS_TOKEN&key=YOUR_KEY
-```
-
-| Parameter | Type | Required | Description |
-|-----------|------|:--------:|-------------|
-| `uid` | string | ⚡ | Free Fire Guest UID |
-| `password` | string | ⚡ | Account password (hex format) |
-| `access_token` | string | ⚡ | Garena Access Token (alternative) |
-| `key` | string | ✅ | Your API Key |
-
-> ⚡ = One auth method required: either `uid` + `password` **or** `access_token`.
-
-<details>
-<summary><b>✅ Success / ❌ Error Responses</b></summary>
-<br/>
-
-```json
-// ✅ Success — UID/Password
-{
-  "uid": "4147917569",
-  "status": "live",
-  "token": "eyJhbGciOiJSUzI1NiIs...",
-  "region": "BD",
-  "Owner": { "Owner": "SiamBhau", "Telegram": "t.me/SiamBhau" }
-}
-
-
-// ✅ Success — Access Token
-{
-  "uid": "2579249340",
-  "status": "valid",
-  "token": "eyJhbGciOiJSUzI1NiIs...",
-  "region": "BD",
-  "Owner": { "Owner": "SiamBhau", "Telegram": "t.me/SiamBhau" }
-}
-
-
-// ❌ Errors
-{
-  "uid": "4147917569",
-  "status": "invalid",
-  "message": "Wrong UID or Password. Please check and try again.",
-  "credit": "@SiamBhau"
-}
-
-{ "error": "Please provide uid and password (or access_token)." }
-```
-
-</details>
-
----
-
 ## 🌍 Supported Regions
 
 <div align="center">
@@ -2576,10 +2255,6 @@ GET /jwtgenerate/generate?access_token=YOUR_ACCESS_TOKEN&key=YOUR_KEY
 <br/>
 
 > 💬 **For API keys, pricing, custom endpoints, or any questions — message on Telegram!**
-
-<br/>
-
-> 🎁 **Get a Free API Key instantly!** Complete quick tasks (GitHub follow + Telegram join) at **[siambhau69.eu.cc/GetFreeApiKey](https://siambhau69.eu.cc/GetFreeApiKey)** — no need to message anyone!
 
 <br/>
 
