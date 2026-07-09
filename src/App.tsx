@@ -1,12 +1,6 @@
 import './index.css'
 import { useState } from 'react'
 import type { ReactNode } from 'react'
-import {
-  Key, Package, ShieldOff, Link2, Ticket, User, Users, Shield, LockOpen,
-  PenLine, Tag, Shirt, Map, Heart, History, Gift, Wallet, KeyRound,
-  Globe, LayoutGrid, AlertTriangle, Phone, Hash, MessageCircle,
-  FileText, Lock, Image as LucideImage,
-} from 'lucide-react'
 
 
 function CodeBlock({ children }: { children: string }) {
@@ -42,13 +36,11 @@ function InlineCode({ c }: { c: ReactNode }) {
 }
 
 
-function SecH({ id, num, icon, title }: { id: string; num: number; icon: ReactNode; title: string }) {
+function SecH({ id, num, emoji, title }: { id: string; num: number; emoji: string; title: string }) {
   return (
     <h2 className="sec-heading" id={id}>
-      <a className="anchor-icon" href={`#${id}`} aria-hidden="true"><Hash size={14} /></a>
-      <span className="sec-icon">{icon}</span>
-      <span className="sec-num">{num}.</span>
-      {title}
+      <a className="anchor-icon" href={`#${id}`} aria-hidden="true">🔗</a>
+      {num}. {emoji} {title}
     </h2>
   )
 }
@@ -73,7 +65,7 @@ function SecBadges({ group, count, color }: { group: string; count: number; colo
 function EpH({ method, path, title }: { method: 'GET' | 'POST'; path: string; title?: string }) {
   return (
     <h3 className="ep-heading">
-      <a className="anchor-icon" href="#" aria-hidden="true"><Hash size={12} /></a>
+      <a className="anchor-icon" href="#" aria-hidden="true">🔗</a>
       <span className={method === 'GET' ? 'method-get' : 'method-post'}>{method}</span>
       <span className="ep-path">{path}</span>
       {title && <><span className="ep-title-sep">—</span><span className="ep-title-name">{title}</span></>}
@@ -113,7 +105,7 @@ function ParamTable({ params, ext }: { params: Param[]; ext?: boolean }) {
   )
 }
 
-function Coll({ title, children }: { title: ReactNode; children: ReactNode }) {
+function Coll({ title, children }: { title: string; children: ReactNode }) {
   const [o, setO] = useState(false)
   return (
     <details className="coll" open={o} onToggle={e => setO((e.target as HTMLDetailsElement).open)}>
@@ -126,41 +118,36 @@ function Coll({ title, children }: { title: ReactNode; children: ReactNode }) {
 
 function TableOfContents() {
   const cards = [
-    { href: '#s1',  icon: <Key size={17} />,          color: '#FF6B00', name: 'Access To JWT',  route: '/accesstojwt',   badge: '2-endpoints-FF6B00' },
-    { href: '#s2',  icon: <Package size={17} />,       color: '#8250df', name: 'Add Item',        route: '/additem',        badge: '1-endpoint-8250df' },
-    { href: '#s3',  icon: <ShieldOff size={17} />,     color: '#cf222e', name: 'Ban Check',       route: '/bancheck',       badge: '1-endpoint-cf222e' },
-    { href: '#s4',  icon: <Link2 size={17} />,         color: '#0969da', name: 'Bind Tools',      route: '/bind',           badge: '4-endpoints-0969da' },
-    { href: '#s5',  icon: <LucideImage size={17} />,   color: '#FF6B00', name: 'Banner',          route: '/banner',         badge: '1-endpoint-FF6B00' },
-    { href: '#s6',  icon: <Ticket size={17} />,        color: '#1a7f37', name: 'EAT To JWT',      route: '/eattojwt',       badge: '1-endpoint-1a7f37' },
-    { href: '#s7',  icon: <User size={17} />,          color: '#1a7f37', name: 'Free Fire Info',  route: '/freefireinfo',   badge: '2-endpoints-1a7f37', free: true },
-    { href: '#s8',  icon: <Users size={17} />,         color: '#0969da', name: 'Friends',         route: '/friends',        badge: '6-endpoints-0969da' },
-    { href: '#s9',  icon: <Shield size={17} />,        color: '#FF6B00', name: 'Guild',           route: '/guild',          badge: '4-endpoints-FF6B00' },
-    { href: '#s10', icon: <LockOpen size={17} />,      color: '#8250df', name: 'JWT Decode',      route: '/jwttokendecode', badge: '1-endpoint-8250df' },
-    { href: '#s11', icon: <PenLine size={17} />,       color: '#FF6B00', name: 'Long Bio',        route: '/longbio',        badge: '1-endpoint-FF6B00' },
-    { href: '#s12', icon: <Tag size={17} />,           color: '#0969da', name: 'Name Changer',    route: '/namechanger',    badge: '1-endpoint-0969da' },
-    { href: '#s13', icon: <Shirt size={17} />,         color: '#FF6B00', name: 'Outfits',         route: '/outfits',        badge: '1-endpoint-FF6B00' },
-    { href: '#s14', icon: <Map size={17} />,           color: '#1a7f37', name: 'Craftlands',      route: '/craftlands',     badge: '2-endpoints-1a7f37' },
-    { href: '#s15', icon: <Heart size={17} />,         color: '#0969da', name: 'Dynamic Duo',     route: '/dynamicduo',    badge: '1-endpoint-0969da' },
-    { href: '#s16', icon: <History size={17} />,       color: '#cf222e', name: 'Login History',   route: '/loginhistory',  badge: '1-endpoint-cf222e' },
-    { href: '#s17', icon: <Gift size={17} />,          color: '#FF6B00', name: 'Wish List',       route: '/wish',          badge: '1-endpoint-FF6B00' },
-    { href: '#s18', icon: <Wallet size={17} />,        color: '#1a7f37', name: 'Wallet Info',     route: '/walletinfo',    badge: '1-endpoint-1a7f37' },
-    { href: '#s19', icon: <KeyRound size={17} />,      color: '#8250df', name: 'JWT Generate',    route: '/jwtgenerate',   badge: '1-endpoint-8250df' },
+    { href: '#s1', emoji: '🔑', name: 'Access To JWT',  route: '/accesstojwt',   badge: '2-endpoints-FF6B00' },
+    { href: '#s2', emoji: '🎽', name: 'Add Item',        route: '/additem',        badge: '1-endpoint-8250df' },
+    { href: '#s3', emoji: '🚫', name: 'Ban Check',       route: '/bancheck',       badge: '1-endpoint-cf222e' },
+    { href: '#s4', emoji: '🔗', name: 'Bind Tools',      route: '/bind',           badge: '4-endpoints-0969da' },
+    { href: '#s5', emoji: '🖼️', name: 'Banner',          route: '/banner',         badge: '1-endpoint-FF6B00' },
+    { href: '#s6', emoji: '🎫', name: 'EAT To JWT',      route: '/eattojwt',       badge: '1-endpoint-1a7f37' },
+    { href: '#s7', emoji: '👤', name: 'Free Fire Info',  route: '/freefireinfo',   badge: '2-endpoints-1a7f37', free: true },
+    { href: '#s8', emoji: '👥', name: 'Friends',         route: '/friends',        badge: '6-endpoints-0969da' },
+    { href: '#s9', emoji: '🏰', name: 'Guild',           route: '/guild',          badge: '4-endpoints-FF6B00' },
+    { href: '#s10', emoji: '🔓', name: 'JWT Decode',     route: '/jwttokendecode', badge: '1-endpoint-8250df' },
+    { href: '#s11', emoji: '✏️', name: 'Long Bio',       route: '/longbio',        badge: '1-endpoint-FF6B00' },
+    { href: '#s12', emoji: '🏷️', name: 'Name Changer',  route: '/namechanger',    badge: '1-endpoint-0969da' },
+    { href: '#s13', emoji: '👗', name: 'Outfits',        route: '/outfits',        badge: '1-endpoint-FF6B00' },
+    { href: '#s14', emoji: '🗺️', name: 'Craftlands',    route: '/craftlands',     badge: '2-endpoints-1a7f37' },
   ]
   const rows: (typeof cards)[] = []
   for (let i = 0; i < cards.length; i += 3) rows.push(cards.slice(i, i + 3))
 
   const nav = [
-    { href: '#s-base',    icon: <Globe size={15} />,         label: 'Base URL & Auth' },
-    { href: '#s-groups',  icon: <LayoutGrid size={15} />,    label: 'All Groups' },
-    { href: '#s-regions', icon: <Globe size={15} />,         label: 'Regions' },
-    { href: '#s-errors',  icon: <AlertTriangle size={15} />, label: 'Errors' },
-    { href: '#s-contact', icon: <Phone size={15} />,         label: 'Contact' },
+    { href: '#s-base', emoji: '🌐', label: 'Base URL & Auth' },
+    { href: '#s-groups', emoji: '📋', label: 'All Groups' },
+    { href: '#s-regions', emoji: '🌍', label: 'Regions' },
+    { href: '#s-errors', emoji: '⚠️', label: 'Errors' },
+    { href: '#s-contact', emoji: '📞', label: 'Contact' },
   ]
 
   return (
     <div className="toc-box">
       <div className="toc-box-header">
-        <h2><LayoutGrid size={15} style={{ flexShrink: 0 }} /> Table of Contents</h2>
+        <h2>📑 Table of Contents</h2>
         <span>Click any card to jump</span>
       </div>
       <div className="toc-box-body">
@@ -171,13 +158,13 @@ function TableOfContents() {
                 {row.map(c => (
                   <td key={c.href}>
                     <a href={c.href}>
-                      <span className="toc-icon-wrap" style={{ background: c.color + '1a', color: c.color }}>{c.icon}</span>
+                      <span className="toc-emoji">{c.emoji}</span>
                       <span className="toc-card-name">
                         {c.name}
                         {c.free && <> <span style={{ fontSize: 10, background: '#dafbe1', color: '#1a7f37', borderRadius: 10, padding: '1px 5px', border: '1px solid #a8e7c3', fontWeight: 700 }}>FREE</span></>}
                       </span>
                       <span className="toc-card-route">{c.route}</span>
-                      <img src={`https://img.shields.io/badge/${c.badge}?style=flat-square`} alt="" height={15} style={{ marginTop: 2 }} />
+                      <img src={`https://img.shields.io/badge/${c.badge}?style=flat-square`} alt="" height={16} style={{ marginTop: 2 }} />
                     </a>
                   </td>
                 ))}
@@ -192,7 +179,7 @@ function TableOfContents() {
               {nav.map(n => (
                 <td key={n.href}>
                   <a href={n.href}>
-                    <span className="toc-nav-icon">{n.icon}</span>
+                    <span className="nav-emoji">{n.emoji}</span>
                     <span>{n.label}</span>
                   </a>
                 </td>
@@ -210,7 +197,7 @@ function TableOfContents() {
 function S1() {
   return (
     <section id="s1">
-      <SecH id="s1" num={1} icon={<Key size={18} />} title="Access To JWT" />
+      <SecH id="s1" num={1} emoji="🔑" title="Access To JWT" />
       <SecBadges group="/accesstojwt" count={2} color="#8250df" />
       <div className="desc-block">Generates a Free Fire <b>JWT Bearer Token</b> from a Garena Access Token or UID/Password combo.</div>
 
@@ -295,7 +282,7 @@ GET /accesstojwt/get_jwt?guest_uid=UID&guest_password=PASSWORD&key=YOUR_KEY`}</C
 function S2() {
   return (
     <section id="s2">
-      <SecH id="s2" num={2} icon={<Package size={18} />} title="Add Item" />
+      <SecH id="s2" num={2} emoji="🎽" title="Add Item" />
       <SecBadges group="/additem" count={1} color="#8250df" />
       <div className="desc-block">Equips items on a Free Fire account (outfit, gun skin, vehicle skin, vault items, etc.).</div>
       <EpH method="GET" path="/additem/additem" title="Equip Item" />
@@ -333,7 +320,7 @@ function S2() {
 function S3() {
   return (
     <section id="s3">
-      <SecH id="s3" num={3} icon={<ShieldOff size={18} />} title="Ban Check" />
+      <SecH id="s3" num={3} emoji="🚫" title="Ban Check" />
       <SecBadges group="/bancheck" count={1} color="#cf222e" />
       <div className="desc-block">Checks the ban status of a Free Fire player by UID.</div>
       <EpH method="GET" path="/bancheck/bancheck" title="Check Ban Status" />
@@ -376,7 +363,7 @@ function S3() {
 function S4() {
   return (
     <section id="s4">
-      <SecH id="s4" num={4} icon={<Link2 size={18} />} title="Bind Tools" />
+      <SecH id="s4" num={4} emoji="🔗" title="Bind Tools" />
       <SecBadges group="/bind" count={4} color="#0969da" />
       <div className="desc-block">Complete email bind toolkit — view bind info, change bound email (5-step OTP flow), unbind email (3-step), or cancel a pending bind request.</div>
 
@@ -516,7 +503,7 @@ Content-Type: application/json
 function S5() {
   return (
     <section id="s5">
-      <SecH id="s5" num={5} icon={<LucideImage size={18} />} title="Banner" />
+      <SecH id="s5" num={5} emoji="🖼️" title="Banner" />
       <SecBadges group="/banner" count={1} color="#FF6B00" />
       <div className="desc-block">Generates a Free Fire <b>player profile banner</b> as a PNG image — Avatar, Banner, Guild Name, Level.</div>
       <EpH method="GET" path="/banner/profile" title="Generate Profile Banner" />
@@ -549,7 +536,7 @@ HTTP 200 OK  |  Content-Type: image/png
 function S6() {
   return (
     <section id="s6">
-      <SecH id="s6" num={6} icon={<Ticket size={18} />} title="EAT To JWT" />
+      <SecH id="s6" num={6} emoji="🎫" title="EAT To JWT" />
       <SecBadges group="/eattojwt" count={1} color="#1a7f37" />
       <div className="desc-block">Decodes a Free Fire <b>EAT (External Access Token)</b> to extract account info and Garena Access Token.</div>
       <EpH method="GET" path="/eattojwt/eat" title="EAT Token Decode" />
@@ -586,7 +573,7 @@ function S6() {
 function S7() {
   return (
     <section id="s7">
-      <SecH id="s7" num={7} icon={<User size={18} />} title="Free Fire Info" />
+      <SecH id="s7" num={7} emoji="👤" title="Free Fire Info" />
       <div className="sec-badges">
         <span className="sec-badge-group"><span className="badge-label">Group</span><span className="badge-val" style={{ background: '#FF6B00' }}>/freefireinfo</span></span>
         <span className="sec-badge-group"><span className="badge-label">Endpoints</span><span className="badge-val" style={{ background: '#1a7f37' }}>2</span></span>
@@ -812,7 +799,7 @@ GET /freefireinfo/stats?uid=2579249340&region=BD&gamemode=cs&matchmode=RANKED&ke
 function S8() {
   return (
     <section id="s8">
-      <SecH id="s8" num={8} icon={<Users size={18} />} title="Friends" />
+      <SecH id="s8" num={8} emoji="👥" title="Friends" />
       <SecBadges group="/friends" count={6} color="#0969da" />
       <div className="desc-block">Complete friend management — add/remove, list friends, star/unstar, set/remove aliases.</div>
 
@@ -868,7 +855,7 @@ GET /friends/friend_action?jwt=YOUR_JWT&uid=TARGET_UID&action=remove&key=YOUR_KE
 }`}</CodeBlock>
       </Coll>
 
-      <EpH method="GET" path="/friends/addstar" title="Star a Friend" />
+      <EpH method="GET" path="/friends/addstar" title="⭐ Star a Friend" />
       <CodeBlock>{`GET /friends/addstar?jwt=YOUR_JWT&uid=TARGET_UID&key=YOUR_KEY`}</CodeBlock>
       <ParamTable params={[
         { name: 'jwt', type: 'string', required: '✅', description: 'Your JWT Token' },
@@ -945,7 +932,7 @@ GET /friends/friend_action?jwt=YOUR_JWT&uid=TARGET_UID&action=remove&key=YOUR_KE
 function S9() {
   return (
     <section id="s9">
-      <SecH id="s9" num={9} icon={<Shield size={18} />} title="Guild" />
+      <SecH id="s9" num={9} emoji="🏰" title="Guild" />
       <SecBadges group="/guild" count={4} color="#FF6B00" />
       <div className="desc-block">Complete guild/clan management — read guild info, join, leave, or <b>create a new guild</b> programmatically.</div>
 
@@ -1076,7 +1063,7 @@ Content-Type: application/json
 function S10() {
   return (
     <section id="s10">
-      <SecH id="s10" num={10} icon={<LockOpen size={18} />} title="JWT Decode" />
+      <SecH id="s10" num={10} emoji="🔓" title="JWT Decode" />
       <SecBadges group="/jwttokendecode" count={1} color="#8250df" />
       <div className="desc-block">Decodes a Free Fire JWT Bearer Token and exposes the full payload.</div>
       <EpH method="GET" path="/jwttokendecode/decode" title="Decode JWT" />
@@ -1117,7 +1104,7 @@ function S10() {
 function S11() {
   return (
     <section id="s11">
-      <SecH id="s11" num={11} icon={<PenLine size={18} />} title="Long Bio" />
+      <SecH id="s11" num={11} emoji="✏️" title="Long Bio" />
       <SecBadges group="/longbio" count={1} color="#FF6B00" />
       <div className="desc-block">Sets a bio that <b>exceeds the in-game character limit</b>. Supports 3 auth methods.</div>
       <EpH method="GET" path="/longbio/bio_upload" title="Upload Long Bio" />
@@ -1163,7 +1150,7 @@ function S11() {
 function S12() {
   return (
     <section id="s12">
-      <SecH id="s12" num={12} icon={<Tag size={18} />} title="Name Changer" />
+      <SecH id="s12" num={12} emoji="🏷️" title="Name Changer" />
       <SecBadges group="/namechanger" count={1} color="#0969da" />
       <div className="desc-block">Changes the in-game name of a Free Fire account.</div>
       <EpH method="GET" path="/namechanger/name" title="Change In-Game Name" />
@@ -1200,7 +1187,7 @@ function S12() {
 function S13() {
   return (
     <section id="s13">
-      <SecH id="s13" num={13} icon={<Shirt size={18} />} title="Outfits" />
+      <SecH id="s13" num={13} emoji="👗" title="Outfits" />
       <SecBadges group="/outfits" count={1} color="#FF6B00" />
       <div className="desc-block">Renders a player's equipped outfit + character + weapon as a <b>1024 × 1024 PNG image</b>.</div>
       <EpH method="GET" path="/outfits/outfit" title="Generate Outfit Image" />
@@ -1233,7 +1220,7 @@ HTTP 200 OK  |  Content-Type: image/png
 function S14() {
   return (
     <section id="s14">
-      <SecH id="s14" num={14} icon={<Map size={18} />} title="Craftlands" />
+      <SecH id="s14" num={14} emoji="🗺️" title="Craftlands" />
       <SecBadges group="/craftlands" count={2} color="#1a7f37" />
       <div className="desc-block">Fetches Free Fire <b>Craftland custom map</b> information by map code.</div>
 
@@ -1313,221 +1300,6 @@ function S14() {
 }
 
 
-function S15() {
-  return (
-    <section id="s15">
-      <SecH id="s15" num={15} icon={<Heart size={18} />} title="Dynamic Duo" />
-      <SecBadges group="/dynamicduo" count={1} color="#0969da" />
-      <div className="desc-block">Fetches a player's <b>Dynamic Duo</b> (special partner) information from Free Fire.</div>
-      <EpH method="GET" path="/dynamicduo/dynamicduo" title="Get Dynamic Duo Info" />
-      <CodeBlock>{`GET /dynamicduo/dynamicduo?uid=2579249340&region=BD&key=YOUR_KEY`}</CodeBlock>
-      <ParamTable params={[
-        { name: 'uid',    type: 'string', required: '✅', description: 'Free Fire Player UID' },
-        { name: 'region', type: 'string', required: '✅', description: 'Server Region Code (BD, IND, SG…)' },
-        { name: 'key',    type: 'string', required: '✅', description: 'Your API Key' },
-      ]} />
-      <Coll title="✅ Success / ❌ Error Responses">
-        <CodeBlock>{`// ✅ Success
-{
-  "status": "success",
-  "uid": "2579249340",
-  "region": "BD",
-  "dynamicduo": { ... },
-  "Owner": { "Owner": "SiamBhau", "Telegram": "t.me/SiamBhau" }
-}
-
-// ❌ Error — Missing UID
-{ "error": "Please provide UID." }
-
-// ❌ Error — Invalid Region
-{ "error": "Please provide REGION." }
-
-// ❌ Error — Fetch Failed
-{
-  "status": "error",
-  "message": "Failed to fetch Dynamic Duo info. Check UID/Region and try again."
-}`}</CodeBlock>
-      </Coll>
-    </section>
-  )
-}
-
-function S16() {
-  return (
-    <section id="s16">
-      <SecH id="s16" num={16} icon={<History size={18} />} title="Login History" />
-      <SecBadges group="/loginhistory" count={1} color="#cf222e" />
-      <div className="desc-block">Returns a player's <b>full login history</b> — device model, architecture, login type, and timestamps — via JWT token.</div>
-      <EpH method="GET" path="/loginhistory/history" title="Get Login History" />
-      <CodeBlock>{`GET /loginhistory/history?jwt=YOUR_JWT&key=YOUR_KEY`}</CodeBlock>
-      <ParamTable params={[
-        { name: 'jwt', type: 'string', required: '✅', description: 'Free Fire JWT Bearer Token' },
-        { name: 'key', type: 'string', required: '✅', description: 'Your API Key' },
-      ]} />
-      <Coll title="✅ Success / ❌ Error Responses">
-        <CodeBlock>{`// ✅ Success
-{
-  "status": "success",
-  "loginhistory": {
-    "nickname": "SiamBhau",
-    "account_id": "2579249340",
-    "region": "BD",
-    "login_entries": [
-      {
-        "last_login_timestamp": 1777636197,
-        "last_login_time": "2025-04-29 08:29:57",
-        "extra": "",
-        "device_model": "SM-A305F",
-        "device_architecture": "arm64-v8a",
-        "login_type": "Usual"
-      }
-    ]
-  },
-  "Owner": { "Owner": "SiamBhau", "Telegram": "t.me/SiamBhau" }
-}
-
-// ❌ Error — Missing JWT
-{ "error": "Please provide 'jwt' parameter (your JWT token)." }
-
-// ❌ Error — Invalid JWT
-{ "status": "error", "message": "Invalid JWT token" }
-
-// ❌ Error — Fetch Failed
-{ "status": "error", "message": "Failed to fetch login history. Check your JWT token and try again." }`}</CodeBlock>
-      </Coll>
-    </section>
-  )
-}
-
-function S17() {
-  return (
-    <section id="s17">
-      <SecH id="s17" num={17} icon={<Gift size={18} />} title="Wish List" />
-      <SecBadges group="/wish" count={1} color="#FF6B00" />
-      <div className="desc-block">Retrieves a player's <b>in-game Wish List</b> — item IDs and their release timestamps.</div>
-      <EpH method="GET" path="/wish/wishlist" title="Get Player Wish List" />
-      <CodeBlock>{`GET /wish/wishlist?uid=2579249340&region=BD&key=YOUR_KEY`}</CodeBlock>
-      <ParamTable params={[
-        { name: 'uid',    type: 'string', required: '✅', description: 'Free Fire Player UID' },
-        { name: 'region', type: 'string', required: '✅', description: 'Server Region Code (BD, IND, SG…)' },
-        { name: 'key',    type: 'string', required: '✅', description: 'Your API Key' },
-      ]} />
-      <Coll title="✅ Success / ❌ Error Responses">
-        <CodeBlock>{`// ✅ Success
-{
-  "status": "success",
-  "uid": "2579249340",
-  "region": "BD",
-  "wishlist": [
-    { "item_id": 911030141, "release_time": "2024-11-01 12:00:00" },
-    { "item_id": 214050892, "release_time": "2024-09-15 08:00:00" }
-  ],
-  "Owner": { "Owner": "SiamBhau", "Telegram": "t.me/SiamBhau" }
-}
-
-// ❌ Error — Missing UID
-{ "error": "Please provide UID." }
-
-// ❌ Error — Fetch Failed
-{ "status": "error", "message": "Failed to fetch wishlist. Check UID/Region and try again." }`}</CodeBlock>
-      </Coll>
-    </section>
-  )
-}
-
-function S18() {
-  return (
-    <section id="s18">
-      <SecH id="s18" num={18} icon={<Wallet size={18} />} title="Wallet Info" />
-      <SecBadges group="/walletinfo" count={1} color="#1a7f37" />
-      <div className="desc-block">Returns a player's <b>in-game wallet</b> — Coins, Gems, GOP Gems, total top-up history, and paid level.</div>
-      <EpH method="GET" path="/walletinfo/wallet" title="Get Wallet Info" />
-      <CodeBlock>{`GET /walletinfo/wallet?uid=2579249340&region=BD&key=YOUR_KEY`}</CodeBlock>
-      <ParamTable params={[
-        { name: 'uid',    type: 'string', required: '✅', description: 'Free Fire Player UID' },
-        { name: 'region', type: 'string', required: '✅', description: 'Server Region Code (BD, IND, SG…)' },
-        { name: 'key',    type: 'string', required: '✅', description: 'Your API Key' },
-      ]} />
-      <Coll title="✅ Success / ❌ Error Responses">
-        <CodeBlock>{`// ✅ Success
-{
-  "status": "success",
-  "uid": "2579249340",
-  "region": "BD",
-  "wallet": {
-    "account_id": "2579249340",
-    "paid_level": 3,
-    "coins": 15420,
-    "gems": 380,
-    "gop_gems": 0,
-    "total_topup": 3900,
-    "last_topup_time": 1777636197,
-    "last_topup_date": "2025-04-29 08:29:57"
-  },
-  "Owner": { "Owner": "SiamBhau", "Telegram": "t.me/SiamBhau" }
-}
-
-// ❌ Error — Missing UID
-{ "error": "Please provide UID." }
-
-// ❌ Error — Fetch Failed
-{ "status": "error", "message": "Failed to fetch wallet info. Check UID/Region and try again." }`}</CodeBlock>
-      </Coll>
-    </section>
-  )
-}
-
-function S19() {
-  return (
-    <section id="s19">
-      <SecH id="s19" num={19} icon={<KeyRound size={18} />} title="JWT Generate" />
-      <SecBadges group="/jwtgenerate" count={1} color="#8250df" />
-      <div className="desc-block">Generates a Free Fire <b>JWT Bearer Token</b> via UID + Password or Garena Access Token. Faster and lighter than <InlineCode c="/accesstojwt" />.</div>
-      <EpH method="GET" path="/jwtgenerate/generate" title="Generate JWT" />
-      <div className="sub-method">▸ Method 1: Via UID + Password</div>
-      <CodeBlock>{`GET /jwtgenerate/generate?uid=4147917569&password=8415C426BBE3371DADD82F5B&key=YOUR_KEY`}</CodeBlock>
-      <div className="sub-method">▸ Method 2: Via Access Token</div>
-      <CodeBlock>{`GET /jwtgenerate/generate?access_token=YOUR_ACCESS_TOKEN&key=YOUR_KEY`}</CodeBlock>
-      <ParamTable params={[
-        { name: 'uid',          type: 'string', required: '⚡', description: 'Free Fire Guest UID' },
-        { name: 'password',     type: 'string', required: '⚡', description: 'Account password (hex format)' },
-        { name: 'access_token', type: 'string', required: '⚡', description: 'Garena Access Token (alternative)' },
-        { name: 'key',          type: 'string', required: '✅', description: 'Your API Key' },
-      ]} />
-      <Coll title="✅ Success / ❌ Error Responses">
-        <CodeBlock>{`// ✅ Success — UID/Password
-{
-  "uid": "4147917569",
-  "status": "live",
-  "token": "eyJhbGciOiJSUzI1NiIs...",
-  "region": "BD",
-  "Owner": { "Owner": "SiamBhau", "Telegram": "t.me/SiamBhau" }
-}
-
-// ✅ Success — Access Token
-{
-  "uid": "2579249340",
-  "status": "valid",
-  "token": "eyJhbGciOiJSUzI1NiIs...",
-  "region": "BD",
-  "Owner": { "Owner": "SiamBhau", "Telegram": "t.me/SiamBhau" }
-}
-
-// ❌ Error — Wrong Credentials
-{
-  "uid": "4147917569",
-  "status": "invalid",
-  "message": "Wrong UID or Password. Please check and try again.",
-  "credit": "@SiamBhau"
-}
-
-// ❌ Error — Missing Params
-{ "error": "Please provide uid and password (or access_token)." }`}</CodeBlock>
-      </Coll>
-    </section>
-  )
-}
-
 export default function App() {
   return (
     <div className="readme-wrap">
@@ -1543,7 +1315,7 @@ export default function App() {
 
         {}
         <div style={{ textAlign: 'center', margin: '18px 0 14px' }}>
-          <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=20&pause=800&color=FF6B00&center=true&vCenter=true&multiline=true&width=800&height=75&lines=Free+Fire+Centralized+API+System+v6.0;19+Groups+%E2%80%A2+34+Endpoints+%E2%80%A2+Player+Info+is+FREE+%F0%9F%92%8E" alt="Typing SVG" />
+          <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=20&pause=800&color=FF6B00&center=true&vCenter=true&multiline=true&width=800&height=75&lines=Free+Fire+Centralized+API+System+v5.0;14+Groups+%E2%80%A2+29+Endpoints+%E2%80%A2+Player+Info+is+FREE+%F0%9F%92%8E" alt="Typing SVG" />
         </div>
 
         {}
@@ -1560,11 +1332,11 @@ export default function App() {
             </a>
           </div>
           <div className="hero-badges" style={{ marginTop: 6 }}>
-            <img src="https://img.shields.io/badge/Version-6.0-FF6B00?style=for-the-badge&labelColor=222" alt="v6.0" />
+            <img src="https://img.shields.io/badge/Version-5.0-FF6B00?style=for-the-badge&labelColor=222" alt="v5.0" />
             <img src="https://img.shields.io/badge/Game-Free%20Fire-FF0000?style=for-the-badge&logo=firefoxbrowser&logoColor=white&labelColor=222" alt="Free Fire" />
             <img src="https://img.shields.io/badge/Built%20With-Python%20Flask-3776AB?style=for-the-badge&logo=python&logoColor=white&labelColor=222" alt="Flask" />
-            <img src="https://img.shields.io/badge/Groups-19-8250df?style=for-the-badge&logo=apachespark&logoColor=white&labelColor=222" alt="19 Groups" />
-            <img src="https://img.shields.io/badge/Endpoints-34-1a7f37?style=for-the-badge&labelColor=222" alt="34 Endpoints" />
+            <img src="https://img.shields.io/badge/Groups-14-8250df?style=for-the-badge&logo=apachespark&logoColor=white&labelColor=222" alt="14 Groups" />
+            <img src="https://img.shields.io/badge/Endpoints-29-1a7f37?style=for-the-badge&labelColor=222" alt="29 Endpoints" />
           </div>
           <div style={{ margin: '14px 0' }}>
             <a href="http://siambhau69.eu.cc" target="_blank" rel="noreferrer">
@@ -1573,7 +1345,7 @@ export default function App() {
           </div>
           <blockquote>
             <img src="https://img.shields.io/badge/⚡-PREMIUM-FF6B00?style=flat-square&labelColor=222" alt="PREMIUM" style={{ verticalAlign: 'middle', marginRight: 8 }} />
-            The most complete <b>Centralized REST API for Free Fire</b> — Player Info, JWT Generator, Ban Check, Guild Tools, Friend Actions, Bind/Unbind, Wallet Info, Login History, Wish List, Outfit Renderer and more. <b>34 endpoints across 19 groups</b>, all in one place.
+            The most complete <b>Centralized REST API for Free Fire</b> — Player Info, JWT Generator, Ban Check, Guild Tools, Friend Actions, Bind/Unbind, Outfit Renderer, Craftlands and more. <b>29 endpoints across 14 groups</b>, all in one place.
           </blockquote>
         </div>
 
@@ -1587,9 +1359,8 @@ export default function App() {
         {}
         <section id="s-base">
           <h2 className="sec-heading">
-            <a className="anchor-icon" href="#s-base" aria-hidden="true"><Hash size={14} /></a>
-            <span className="sec-icon"><Globe size={18} /></span>
-            Base URL &amp; Authentication
+            <a className="anchor-icon" href="#s-base" aria-hidden="true">🔗</a>
+            🌐 Base URL &amp; Authentication
           </h2>
           <CodeBlock>{`Base URL:  http://siambhau69.eu.cc`}</CodeBlock>
           <div className="auth-note">
@@ -1600,7 +1371,7 @@ export default function App() {
             Add the <InlineCode c="key" /> query parameter to every request:
           </p>
           <CodeBlock>{`http://siambhau69.eu.cc/<group>/<endpoint>?param=VALUE&key=YOUR_KEY`}</CodeBlock>
-          <Coll title={<><Lock size={13} style={{ flexShrink: 0 }} /> Authentication Error Responses (HTTP 403)</>}>
+          <Coll title="🔐 Authentication Error Responses (HTTP 403)">
             <CodeBlock>{`// ❌ Error — Key Required
 {
   "error": "API key required. Use ?key=YOUR_KEY | Contact: t.me/SiamBhau"
@@ -1633,38 +1404,29 @@ export default function App() {
         {}
         <section id="s-groups">
           <h2 className="sec-heading">
-            <a className="anchor-icon" href="#s-groups" aria-hidden="true"><Hash size={14} /></a>
-            <span className="sec-icon"><LayoutGrid size={18} /></span>
-            All API Groups
+            <a className="anchor-icon" href="#s-groups" aria-hidden="true">🔗</a>
+            📋 All API Groups
           </h2>
           <CodeBlock>{`GET http://siambhau69.eu.cc/`}</CodeBlock>
-          <Coll title={<><FileText size={13} style={{ flexShrink: 0 }} /> View Full Response (19 Groups)</>}>
+          <Coll title="📄 View Full Response (14 Groups)">
             <CodeBlock>{`{
   "API": "Free Fire Centralized API System",
-  "Version": "6.0",
-  "Total API": 19,
-  "Total Endpoints": 34,
+  "Version": "5.0",
   "Owner": "SiamBhau",
-  "Telegram": "t.me/SiamBhau",
   "Groups": {
     "Access To JWT"  : "/accesstojwt",
     "Add Item"       : "/additem",
     "Ban Check"      : "/bancheck",
     "Bind Tools"     : "/bind",
     "Banner"         : "/banner",
-    "Dynamic Duo"    : "/dynamicduo",
     "EAT To JWT"     : "/eattojwt",
     "Free Fire Info" : "/freefireinfo",
-    "Friends Tools"  : "/friends",
-    "Guild Tools"    : "/guild",
+    "Friends"        : "/friends",
+    "Guild"          : "/guild",
     "JWT Decode"     : "/jwttokendecode",
-    "JWT Generate"   : "/jwtgenerate",
-    "Login History"  : "/loginhistory",
     "Long Bio"       : "/longbio",
     "Name Changer"   : "/namechanger",
     "Outfits"        : "/outfits",
-    "Wallet Info"    : "/walletinfo",
-    "Wish List"      : "/wish",
     "Craftlands"     : "/craftlands"
   }
 }`}</CodeBlock>
@@ -1688,18 +1450,12 @@ export default function App() {
         <S12 /><hr className="divider" />
         <S13 /><hr className="divider" />
         <S14 /><hr className="divider" />
-        <S15 /><hr className="divider" />
-        <S16 /><hr className="divider" />
-        <S17 /><hr className="divider" />
-        <S18 /><hr className="divider" />
-        <S19 /><hr className="divider" />
 
         {}
         <section id="s-regions">
           <h2 className="sec-heading">
-            <a className="anchor-icon" href="#s-regions" aria-hidden="true"><Hash size={14} /></a>
-            <span className="sec-icon"><Globe size={18} /></span>
-            Supported Regions
+            <a className="anchor-icon" href="#s-regions" aria-hidden="true">🔗</a>
+            🌍 Supported Regions
           </h2>
           <div className="table-wrap">
             <table className="regions-table">
@@ -1731,9 +1487,8 @@ export default function App() {
         {}
         <section id="s-errors">
           <h2 className="sec-heading">
-            <a className="anchor-icon" href="#s-errors" aria-hidden="true"><Hash size={14} /></a>
-            <span className="sec-icon"><AlertTriangle size={18} /></span>
-            Error Reference
+            <a className="anchor-icon" href="#s-errors" aria-hidden="true">🔗</a>
+            ⚠️ Error Reference
           </h2>
           <div className="table-wrap">
             <table className="error-table">
@@ -1765,9 +1520,8 @@ export default function App() {
         {}
         <section id="s-contact" className="contact-sec">
           <h2 className="sec-heading" style={{ justifyContent: 'center' }}>
-            <a className="anchor-icon" href="#s-contact" aria-hidden="true"><Hash size={14} /></a>
-            <span className="sec-icon"><Phone size={18} /></span>
-            Contact
+            <a className="anchor-icon" href="#s-contact" aria-hidden="true">🔗</a>
+            📞 Contact
           </h2>
           <div className="contact-badges">
             <a href="https://t.me/SiamBhau" target="_blank" rel="noreferrer">
@@ -1781,16 +1535,7 @@ export default function App() {
             </a>
           </div>
           <div className="contact-note">
-            <MessageCircle size={14} style={{ display: 'inline', verticalAlign: 'middle', marginRight: 5, flexShrink: 0 }} />
-            <b>For API keys, pricing, custom endpoints, or any questions — message on Telegram!</b>
-          </div>
-          <div className="contact-note" style={{ marginTop: 10, borderLeft: '3px solid #1a7f37', background: 'rgba(26,127,55,0.07)', color: 'var(--fg)' }}>
-            <Gift size={14} style={{ display: 'inline', verticalAlign: 'middle', marginRight: 5, color: '#1a7f37', flexShrink: 0 }} />
-            <b>Get a Free API Key instantly!</b> Complete quick tasks (GitHub follow + Telegram join) at{' '}
-            <a href="https://siambhau69.eu.cc/GetFreeApiKey" target="_blank" rel="noreferrer" style={{ color: '#1a7f37', fontWeight: 700 }}>
-              siambhau69.eu.cc/GetFreeApiKey
-            </a>{' '}
-            — no need to message anyone!
+            💬 <b>For API keys, pricing, custom endpoints, or any questions — message on Telegram!</b>
           </div>
           <p className="copyright">© SiamBhau · Free Fire Centralized API · Premium Access Only · Unauthorized resale is prohibited.</p>
         </section>
