@@ -12,10 +12,10 @@
   <a href="http://siambhau69.eu.cc">
     <img src="https://img.shields.io/badge/%F0%9F%9F%A2%20API-Online%20%26%20Running-00C851?style=for-the-badge&labelColor=0d1117" />
   </a>
-  <a href="https://t.me/SiamBhau?text=https%3A%2F%2Fsiambhau69.eu.cc%0A%0AHi%20%40SiamBhau%20👋,%20I'd%20like%20to%20get%20a%20FREE%20API%20key%20for%20the%20Free%20Fire%20Info%20endpoints.%20Could%20you%20please%20activate%20one%20for%20me%3F%20🙏">
+  <a href="https://telegram.me/SiamBhau?text=https%3A%2F%2Fsiambhau69.eu.cc%0A%0AHi%20%40SiamBhau%20👋,%20I'd%20like%20to%20get%20a%20FREE%20API%20key%20for%20the%20Free%20Fire%20Info%20endpoints.%20Could%20you%20please%20activate%20one%20for%20me%3F%20🙏">
     <img src="https://img.shields.io/badge/%E2%9C%A8%20Free%20Key-Free%20Fire%20Info-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white&labelColor=0d1117" />
   </a>
-  <a href="https://t.me/SiamBhau?text=https%3A%2F%2Fsiambhau69.eu.cc%0A%0AHi%20%40SiamBhau%20👋,%20I%20want%20to%20BUY%20a%20Premium%20API%20key%20for%20the%20Free%20Fire%20Centralized%20API.%20Please%20share%20your%20available%20plans,%20pricing%20%26%20payment%20methods.%20💎">
+  <a href="https://telegram.me/SiamBhau?text=https%3A%2F%2Fsiambhau69.eu.cc%0A%0AHi%20%40SiamBhau%20👋,%20I%20want%20to%20BUY%20a%20Premium%20API%20key%20for%20the%20Free%20Fire%20Centralized%20API.%20Please%20share%20your%20available%20plans,%20pricing%20%26%20payment%20methods.%20💎">
     <img src="https://img.shields.io/badge/%F0%9F%92%8E%20Premium%20Key-Buy%20Now-FF6B00?style=for-the-badge&logo=telegram&logoColor=white&labelColor=0d1117" />
   </a>
 </p>
@@ -2560,7 +2560,7 @@ GET /jwtgenerate/generate?access_token=YOUR_ACCESS_TOKEN&key=YOUR_KEY
 <br/>
 
 <p align="center">
-  <a href="https://t.me/SiamBhau">
+  <a href="https://telegram.me/SiamBhau">
     <img src="https://img.shields.io/badge/Telegram-@SiamBhau-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white&labelColor=0d1117" />
   </a>
   &nbsp;
