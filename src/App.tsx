@@ -1,3 +1,4 @@
+import TokenGenerator from './components/TokenGenerator'
 import './index.css'
 import { useState, useEffect, useRef } from 'react'
 import type { ReactNode } from 'react'
@@ -1753,6 +1754,7 @@ export default function App() {
 
       <main className="docs-main">
         <div className="docs-content">
+          <TokenGenerator />
 
           <div className="hero animate-fadeup">
             <div className="hero-bg-shape" />
